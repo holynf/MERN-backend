@@ -5,6 +5,6 @@ const config = require('config');
 module.exports = function(){
     mongoose
         .connect(config.get('db.address'))
-        .then(() => console.log(`connected to mongodb`))
-        .catch(() => console.log(`mongodb connection failed`));
+        .then(() => debug("connected to mongodb"))
+        .catch(() => debug("could not connect"));
 }
